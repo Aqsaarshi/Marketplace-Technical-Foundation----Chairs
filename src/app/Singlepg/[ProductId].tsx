@@ -12,7 +12,8 @@ import Footer from "../Footer/Footer";
 
 const builder = imageUrlBuilder(client);
 
-const urlFor = (source: any) => builder.image(source).url();
+const urlFor = (source: Product["image"]["asset"]) =>
+  builder.image(source).url();
 
 interface Product {
   type: string;
@@ -68,15 +69,6 @@ const ProductDetail: React.FC = () => {
   if (error) return <div>{error}</div>;
   if (!product) return <div>Loading...</div>;
 
-  function addToCart(_arg0: {
-    _id: string;
-    name: string;
-    price: number;
-    quantity: number;
-  }) {
-    throw new Error("Function not implemented.");
-  }
-
   return (
     <div>
       <Header />
@@ -124,22 +116,6 @@ const ProductDetail: React.FC = () => {
             </div>
             <p className="mb-6 leading-relaxed">{product.description}</p>
             <div className="flex">
-              <button
-                onClick={() => {
-                  if (product) {
-                    addToCart({
-                      _id: product._id,
-                      name: product.name,
-                      price: product.price,
-                      quantity: 1,
-                    });
-                  }
-                }}
-                className="inline-flex items-center text-white bg-[#029FAE] border-0 py-2 px-6 focus:outline-none hover:bg-[#1f646a] rounded text-lg"
-              >
-                <PiShoppingCartBold className="mr-2" />
-                Add to Cart
-              </button>
               {/* Link to Cart page after adding to cart */}
               <a
                 href="/Cart"
