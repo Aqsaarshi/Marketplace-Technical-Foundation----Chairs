@@ -1,8 +1,10 @@
 import imageUrlBuilder from '@sanity/image-url';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { ImageUrlBuilder } from 'sanity';
 
-const builder = imageUrlBuilder({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,  // Make sure this is your actual project ID
-  dataset: 'production', // Adjust this if using a different dataset
+const builder: ImageUrlBuilder = imageUrlBuilder({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,  // Replace with your actual project ID
+  dataset: 'production', // Replace with your dataset name if it's not "production"
 });
 
-export const urlFor = (source: any) => builder.image(source).url();
+export const urlFor = (source: SanityImageSource) => builder.image(source).url();

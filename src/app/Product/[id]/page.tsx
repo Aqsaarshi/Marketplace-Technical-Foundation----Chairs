@@ -85,53 +85,56 @@ const ProductDetail: React.FC = () => {
           alt="Logo"
           className="ml-[20px] sm:ml-0"
         />
-        <a
+        <Link
           href="/Cart"
           className="flex items-center w-[120px] h-[44px] px-[18px] py-[11px] gap-[12px] rounded-tl-[8px] bg-white relative z-10 mt-4 sm:mt-0 sm:w-auto sm:ml-0 sm:mr-0 ml-[10px] mr-[10px]"
         >
           <PiShoppingCartBold className="h-[40px] w-[40px]" />
           <p>Cart</p>
           <Image src={No} alt="No Items" height={30} width={30} />
-        </a>
+        </Link>
       </div>
       <div className="w-full  h-[74px] px-6 sm:px-[120px] py-[14px] flex justify-between items-center ">
         {/* Navigation Links */}
         <nav className="w-full sm:w-[339px] flex flex-wrap items-center text-base ">
-          <a
+          <Link
             href="/"
             className="mr-5 hover:text-slate-400 font-Inter text-[#007580]"
           >
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="/Cart"
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
           >
             Shop
-          </a>
-          <a
+          </Link>
+          <Link
             href="/Product"
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
           >
             Product
-          </a>
+          </Link>
           <Link
             href="/Shop"
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
           >
             Pages
           </Link>
-          <a
+          <Link
             href="/About"
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
           >
             About
-          </a>
+          </Link>
         </nav>
         {/* Contact Info */}
-        <a href="/Contact" className="text-black ml-auto hover:text-slate-400">
+        <Link
+          href="/Contact"
+          className="text-black ml-auto hover:text-slate-400"
+        >
           Contact: (808) 555-0111
-        </a>
+        </Link>
       </div>
       <div className="container mx-auto px-6 py-10">
         {/* Product Details Section */}

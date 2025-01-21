@@ -68,7 +68,7 @@ const ProductDetail: React.FC = () => {
   if (error) return <div>{error}</div>;
   if (!product) return <div>Loading...</div>;
 
-  function addToCart(arg0: {
+  function addToCart(_arg0: {
     _id: string;
     name: string;
     price: number;
