@@ -17,6 +17,9 @@ const config: Config = {
                     foreground: "hsl(var(--card-foreground))",
                 },
                 // other color definitions...
+                screens: {
+                    '1440': '1440px', // Custom breakpoint for 1440px
+                },
             },
         },
     },

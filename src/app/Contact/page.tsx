@@ -6,37 +6,37 @@ import No from "../../app/image/No.png";
 import { PiShoppingCartBold } from "react-icons/pi";
 import group from "../../app/image/group.png";
 import waranty from "../../app/image/waranty.png";
-import { FaFacebook, FaTwitter, FaPinterest, FaYoutube } from "react-icons/fa";
-import { IoLogoInstagram } from "react-icons/io";
+import Link from "next/link";
+import Footer from "../Footer/Footer";
+const productDetail = { id: "D24vb8qimRxTY37EypHlwx" }; // Example hardcoded value
 
 const page = () => {
   return (
     <div className="w-full">
       {/* Header */}
       <Header />
-      <div className="w-full sm:w-[1920px] h-[84px] px-6 sm:px-[300px] py-[20px] flex justify-center sm:gap-[850px] gap-[20px] bg-[#F0F2F3]">
+      <div className="w-full h-[84px] px-2 sm:px-[20px] md:px-[30px] lg:px-[40px] py-[20px] flex flex-row sm:flex-row justify-between items-center bg-[#F0F2F3]">
         <Image
           src={Logo}
           height={40}
           width={166}
           alt="Logo"
-          className="sm:ml-[80px] ml-[20px]"
+          className="ml-[20px] sm:ml-0"
         />
         <a
           href="/Cart"
-          className="flex items-center sm:ml-[220px] sm:mr-[100px] w-[120px] h-[44px] px-[18px] py-[11px] gap-[12px] rounded-tl-[8px] bg-white relative z-10 ml-[10px] mr-[10px]"
+          className="flex items-center w-[120px] h-[44px] px-[18px] py-[11px] gap-[12px] rounded-tl-[8px] bg-white relative z-10 mt-4 sm:mt-0 sm:w-auto sm:ml-0 sm:mr-0 ml-[10px] mr-[10px]"
         >
-          <PiShoppingCartBold className="h-[44px] w-[44px]" />
+          <PiShoppingCartBold className="h-[40px] w-[40px]" />
           <p>Cart</p>
           <Image src={No} alt="No Items" height={30} width={30} />
         </a>
       </div>
-
-      <div className="w-full sm:w-[1920px] h-[74px] px-6 sm:px-[300px] py-[14px] flex justify-around items-center">
+      <div className="w-full  h-[74px] px-6 sm:px-[120px] py-[14px] flex justify-between items-center ">
         {/* Navigation Links */}
-        <nav className="w-full sm:w-[339px] flex flex-wrap items-center text-base gap-0">
+        <nav className="w-full sm:w-[339px] flex flex-wrap items-center text-base ">
           <a
-            href="/#"
+            href="/"
             className="mr-5 hover:text-slate-400 font-Inter text-[#007580]"
           >
             Home
@@ -53,12 +53,12 @@ const page = () => {
           >
             Product
           </a>
-          <a
-            href="/Singlepg"
+          <Link
+            href={`/Product/${productDetail.id}`}
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
           >
             Pages
-          </a>
+          </Link>
           <a
             href="/About"
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
@@ -71,37 +71,41 @@ const page = () => {
           Contact: (808) 555-0111
         </a>
       </div>
-      <div className="border-t border-gray-300 w-[1920px]"></div>
+      <div className="border-t border-gray-300 w-full my-4 sm:my-6 lg:my-8"></div>
 
       {/* Contact Section */}
-      <section className="sm:w-[1920px] w-[320px] text-gray-600 body-font relative">
-        <h1 className="text-3xl font-sans text-center font-bold mt-7">
+      <section className="w-full text-gray-600 body-font relative px-4 sm:px-8">
+        {/* Title */}
+        <h1 className="text-2xl sm:text-3xl font-sans text-center font-bold mt-7">
           Get In Touch With Us
         </h1>
-        <p className="text-center font-sans mt-7">
-          For More Information About Our Product & Services. Please Feel Free To
+        <p className="text-center font-sans mt-4 sm:mt-7 text-sm sm:text-base">
+          For More Information About Our Product & Services, Please Feel Free To
           Drop Us
-          <br /> An Email. Our Staff Always Be There To Help You Out. Do Not
-          Hesitate!
+          <br className="hidden sm:block" /> An Email. Our Staff Will Always Be
+          There To Help You. Do Not Hesitate!
         </p>
-        <div className="container px-5 py-24 mx-auto flex flex-wrap items-start justify-center gap-10">
+
+        {/* Content */}
+        <div className="container mx-auto px-4 sm:px-8 py-12 flex flex-wrap items-start justify-center gap-10">
           {/* Image */}
           <Image
             src={group}
             alt="Group"
             height={537}
             width={393}
-            className="rounded-lg"
+            className="rounded-lg w-full sm:w-auto max-w-[90%] sm:max-w-[393px]"
           />
 
           {/* Form */}
-          <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col w-[1920px] p-6 shadow-lg rounded-lg">
-            <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
+          <div className="w-full sm:w-[480px] bg-white flex flex-col p-6 shadow-lg rounded-lg">
+            <h2 className="text-gray-900 text-lg sm:text-xl mb-2 font-medium title-font">
               Feedback
             </h2>
-            <p className="leading-relaxed mb-4 text-gray-600">
+            <p className="leading-relaxed mb-4 text-gray-600 text-sm sm:text-base">
               Post-ironic portland shabby chic echo park, banjo fashion axe.
             </p>
+            {/* Name Input */}
             <div className="mb-4">
               <label htmlFor="name" className="leading-7 text-sm text-gray-600">
                 Name
@@ -110,9 +114,10 @@ const page = () => {
                 type="text"
                 id="name"
                 name="name"
-                className="w-full h-[50px] bg-white rounded border border-gray-300 focus:border-[#029FAE] focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3"
+                className="w-full h-[50px] bg-white rounded border border-gray-300 focus:border-[#029FAE] focus:ring-2 focus:ring-[#029FAE]/50 text-base outline-none text-gray-700 py-1 px-3"
               />
             </div>
+            {/* Email Input */}
             <div className="mb-4">
               <label
                 htmlFor="email"
@@ -124,9 +129,10 @@ const page = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full h-[50px] bg-white rounded border border-gray-300 focus:border-[#029FAE] focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3"
+                className="w-full h-[50px] bg-white rounded border border-gray-300 focus:border-[#029FAE] focus:ring-2 focus:ring-[#029FAE]/50 text-base outline-none text-gray-700 py-1 px-3"
               />
             </div>
+            {/* Message Input */}
             <div className="mb-4">
               <label
                 htmlFor="message"
@@ -137,10 +143,11 @@ const page = () => {
               <textarea
                 id="message"
                 name="message"
-                className="w-full h-32 bg-white rounded border border-gray-300 focus:border-[#029FAE] focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 resize-none"
+                className="w-full h-32 bg-white rounded border border-gray-300 focus:border-[#029FAE] focus:ring-2 focus:ring-[#029FAE]/50 text-base outline-none text-gray-700 py-1 px-3 resize-none"
               ></textarea>
             </div>
-            <button className="h-[55px] w-full text-white bg-[#029FAE] border-0 py-4 px-6 focus:outline-none hover:bg-[#93dce2] rounded text-lg font-sans">
+            {/* Submit Button */}
+            <button className="h-[50px] w-full text-white bg-[#029FAE] border-0 py-3 px-6 focus:outline-none hover:bg-[#93dce2] rounded text-lg font-sans">
               Submit
             </button>
           </div>
@@ -148,113 +155,16 @@ const page = () => {
       </section>
 
       {/* Warranty Image */}
-      <div className="sm:w-[1920px] w-[320px] flex justify-center mt-10">
+      <div className="w-full px-4 sm:px-8 flex justify-center mt-10">
         <Image
           src={waranty}
           alt="Warranty"
           width={1320}
           height={270}
-          className="rounded-lg"
+          className="rounded-lg w-full max-w-[1320px] h-auto"
         />
       </div>
-      <footer className="w-[320px] sm:w-[1920px] sm:mt-[20px] mt-[32px] bg-gray-100 text-gray-600 shadow-lg  ">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex flex-wrap md:text-left text-center items-start">
-            {/* Logo and Social Links */}
-            <div className="w-full md:w-1/4 mb-4">
-              <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                <Image src={Logo} alt="Logo" height={40} width={168} />
-              </a>
-              <p className="mt-4 text-sm text-gray-500">
-                Vivamus tristique odio sit amet velit semper, eu posuere turpis
-                interdum. Cras egestas purus
-                <div className="flex justify-start mt-2 space-x-2 text-gray-600">
-                  <FaFacebook />
-                  <FaTwitter />
-                  <IoLogoInstagram />
-                  <FaPinterest />
-                  <FaYoutube />
-                </div>
-              </p>
-            </div>
-            {/* Categories */}
-            <div className="w-full md:w-1/4 mb-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-                CATEGORIES
-              </h2>
-              <nav className="list-none mb-4">
-                <li>
-                  <a className="text-black hover:text-gray-800">Sofa</a>
-                </li>
-                <li>
-                  <a className="text-black hover:text-gray-800">Armchair</a>
-                </li>
-                <li>
-                  <a className="text-black hover:text-gray-800">Wing Chair</a>
-                </li>
-                <li>
-                  <a className="text-black hover:text-[#007580]">Desk Chair</a>
-                </li>
-                <li>
-                  <a className="text-black hover:text-[#007580]">Park Bench</a>
-                </li>
-              </nav>
-            </div>
-            {/* Support */}
-            <div className="w-full md:w-1/4 mb-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-                Support
-              </h2>
-              <nav className="list-none mb-4">
-                <li>
-                  <a className="text-black hover:text-gray-800">
-                    Help & Support
-                  </a>
-                </li>
-                <li>
-                  <a className="text-black hover:text-gray-800">
-                    Terms & Conditions
-                  </a>
-                </li>
-                <li>
-                  <a className="text-black hover:text-gray-800">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a className="text-black hover:text-gray-800">Help</a>
-                </li>
-              </nav>
-            </div>
-            {/* Newsletter */}
-            <div className="w-full md:w-1/4 mb-4">
-              <h2 className="title-font font-medium text-[#9A9CAA] tracking-widest text-sm mb-3">
-                NEWSLETTER
-              </h2>
-              <div className="flex">
-                <input
-                  type="text"
-                  placeholder="Your Email"
-                  className="w-full bg-gray-100 rounded border border-gray-300 text-gray-700 py-1 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-                />
-                <button className="ml-2 text-white bg-[#029FAE] py-2 px-4 rounded">
-                  Subscribe
-                </button>
-              </div>
-              <p className="text-gray-500 text-sm mt-2">
-                Bitters chicharrones fanny pack waistcoat green juice
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="bg-gray-200">
-          <div className="container px-5 py-4 mx-auto flex items-center justify-center">
-            <p className="text-sm text-gray-500">
-              © 2024 - Designed & Developed by Zakirsoft
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Footer */}
     </div>

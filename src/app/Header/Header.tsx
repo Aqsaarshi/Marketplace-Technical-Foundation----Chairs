@@ -8,25 +8,26 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/src/components/ui/accordion";
+
 import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className=" sm:w-[320px] md:w-[720px] lg:w-[1920px] ">
-      <div className="flex justify-center items-center gap-[20px] sm:gap-[980px] px-4 sm:px-8 lg:px-16 bg-[#272343] h-[45px] ">
+    <div className="w-full bg-[#272343]">
+      <div className="flex flex-wrap justify-between items-center px-4 py-2 sm:px-6 lg:px-16">
         {/* Shipping Message */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-center">
           <Image src={check} alt="Check Icon" height={16} width={16} />
-          <p className="font-sans text-[13px] leading-[14.3px] text-white">
+          <p className="text-xs sm:text-sm text-white">
             Free shipping on all orders over $50
           </p>
         </div>
 
         {/* Accordion and Links */}
-        <div className="flex items-center gap-4 text-white">
+        <div className="flex flex-wrap items-center gap-4 text-white text-xs sm:text-sm">
           {/* Language Selector */}
-          <Accordion type="single" collapsible className="relative text-sm">
+          <Accordion type="single" collapsible className="relative">
             <AccordionItem value="item-1">
               <AccordionTrigger>Eng</AccordionTrigger>
               <AccordionContent>Urdu</AccordionContent>
@@ -34,7 +35,7 @@ const Header = () => {
           </Accordion>
 
           {/* FAQ and Help Links */}
-          <div className="flex items-center gap-2 text-sm">
+          <div className="flex items-center gap-2">
             <Link href="/Faq" className="hover:underline">
               FAQs
             </Link>

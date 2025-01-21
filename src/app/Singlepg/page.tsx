@@ -19,67 +19,62 @@ const page = () => {
   return (
     <div>
       <Header />
-      <div className="w-full sm:w-[1920px] h-[84px] px-6 sm:px-[300px] py-[20px] flex justify-center sm:gap-[850px] gap-[20px] bg-[#F0F2F3]">
+      <div className="w-full h-[84px] px-2 sm:px-[20px] md:px-[30px] lg:px-[40px] py-[20px] flex flex-row sm:flex-row justify-between items-center bg-[#F0F2F3]">
         <Image
           src={Logo}
           height={40}
           width={166}
           alt="Logo"
-          className="sm:ml-[80px] ml-[20px]"
+          className="ml-[20px] sm:ml-0"
         />
         <a
           href="/Cart"
-          className="flex items-center sm:ml-[220px] sm:mr-[100px] w-[120px] h-[44px] px-[18px] py-[11px] gap-[12px] rounded-tl-[8px] bg-white relative z-10 ml-[10px] mr-[10px]"
+          className="flex items-center w-[120px] h-[44px] px-[18px] py-[11px] gap-[12px] rounded-tl-[8px] bg-white relative z-10 mt-4 sm:mt-0 sm:w-auto sm:ml-0 sm:mr-0 ml-[10px] mr-[10px]"
         >
-          <PiShoppingCartBold className="h-[44px] w-[44px]" />
+          <PiShoppingCartBold className="h-[40px] w-[40px]" />
           <p>Cart</p>
           <Image src={No} alt="No Items" height={30} width={30} />
         </a>
       </div>
 
-      <div className="w-full sm:w-[1920px] h-[74px] px-6 sm:px-[300px] py-[14px] flex justify-around items-center">
-        {/* Navigation Links */}
-        <nav className="w-full sm:w-[339px] flex flex-wrap items-center text-base gap-0">
-          <Link
+      <div className="w-full h-[74px] px-6 sm:px-[120px] py-[14px] flex justify-between items-center">
+        <nav className="w-full sm:w-[339px] flex flex-wrap items-center text-base ">
+          <a
             href="/"
             className="mr-5 hover:text-slate-400 font-Inter text-[#007580]"
           >
             Home
-          </Link>
-          <Link
+          </a>
+          <a
             href="/Cart"
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
           >
             Shop
-          </Link>
-          <Link
+          </a>
+          <a
             href="/Product"
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
           >
             Product
-          </Link>
-          <Link
-            href="/Singlepg"
+          </a>
+          <a
+            href="/{product.id}"
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
           >
             Pages
-          </Link>
-          <Link
+          </a>
+          <a
             href="/About"
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
           >
             About
-          </Link>
+          </a>
         </nav>
-        {/* Contact Info */}
-        <Link
-          href="/Contact"
-          className="text-black ml-auto hover:text-slate-400"
-        >
+        <a href="/Contact" className="text-black ml-auto hover:text-slate-400">
           Contact: (808) 555-0111
-        </Link>
+        </a>
       </div>
-      <div className="border-t border-gray-300 w-full"></div>
+      <div className="border-t border-gray-300 w-full my-4 sm:my-6 lg:my-8"></div>
       {/* Hero Section */}
       <section className="text-gray-600 body-font w-[320px] sm:w-[1920px] ">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -116,7 +111,7 @@ const page = () => {
       </section>
 
       {/* Featured Products */}
-      <div className="w-[320px] sm:w-[1920px] flex flex-col items-center py-12 px-4">
+      <div className="w-[320px] sm:w-[1920px] flex flex-col items-center py-12 px-4 ml-[10px] sm:-ml-[180px]">
         <h2 className="text-2xl md:text-3xl font-semibold mb-6">
           Featured Products
         </h2>
@@ -125,12 +120,12 @@ const page = () => {
           {[Item7, Item1, Items4, Item3, Items1].map((item, index) => (
             <div
               key={index}
-              className="w-[330px] h-auto flex flex-col items-center"
+              className="w-[270px] h-auto flex flex-col items-center"
             >
               <Image
                 src={item}
                 alt={`Item ${index + 1}`}
-                height={312}
+                height={270}
                 width={330}
               />
               <p className="text-sm text-black mt-4">Library Stool Chair</p>
@@ -143,7 +138,7 @@ const page = () => {
         </button>
       </div>
       <div className="border-t border-gray-300  mt-[20px]"></div>
-      <footer className="w-[320px] sm:w-[1920px] sm:mt-[105px] mt-[100px] bg-gray-100 text-gray-600 shadow-lg  ">
+      <footer className="w-[320px] sm:w-[1920px] sm:mt-[105px] mt-[100px] bg-gray-100 text-gray-600 shadow-lg sm:-ml-40 ">
         <div className="container mx-auto px-6 py-4">
           <div className="flex flex-wrap md:text-left text-center items-start">
             {/* Logo and Social Links */}

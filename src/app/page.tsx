@@ -4,7 +4,7 @@ import Hero from "./Hero/Hero";
 
 const page = () => {
   return (
-    <div className="w-screen">
+    <div className="  ">
       <Header />
       <Hero />
     </div>
