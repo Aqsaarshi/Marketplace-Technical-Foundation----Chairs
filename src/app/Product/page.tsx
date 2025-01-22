@@ -17,6 +17,8 @@ const builder = imageUrlBuilder(client);
 const urlFor = (source: any) => builder.image(source).url();
 
 
+
+
 const getProductsFromSanity = async () => {
   try {
     const query = `*[_type=="products"][0..19]{
