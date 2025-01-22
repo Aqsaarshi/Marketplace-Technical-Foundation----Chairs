@@ -1,0 +1,7 @@
+Test Case ID,Description,Test Steps,Expected Result,Actual Result,Status,Priority,Comments
+TC001,Performance Metrics,Measure site performance,Good performance metrics,"Performance score: 79, First Contentful Paint: 0.4s, Largest Contentful Paint: 0.6s",Passed,High,No major performance issues
+TC002,Accessibility,Check accessibility,Proper accessibility score,Accessibility score: 88,Passed,Medium,Some minor issues detected
+TC003,Best Practices Compliance,Check best practices,Site follows best practices,Best Practices score: 96,Passed,Low,No issues found
+TC004,SEO Optimization,Check SEO score,Proper SEO setup and scores,SEO score: 91,Passed,Medium,SEO configuration is optimal
+TC005,Loading and Interaction,Measure load and TBT,No major blocking time or shifts,"Total Blocking Time: 440ms, CLS: 0.071",Passed,High,Loading performance is smooth
+TC006,Cumulative Layout Shift,Monitor layout shifts,No unexpected layout shifts,Cumulative Layout Shift: 0.071,Passed,Medium,"Slight shifts, nothing critical"
