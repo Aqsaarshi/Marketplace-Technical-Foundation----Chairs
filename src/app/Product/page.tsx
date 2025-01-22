@@ -14,8 +14,8 @@ const productDetail = { id: "D24vb8qimRxTY37EypHlwx" }; // Example hardcoded val
 
 const builder = imageUrlBuilder(client);
 
-const urlFor = (source: any) => builder.image(source).url();
-
+const urlFor = (source: Product["image"]["asset"]) =>
+  builder.image(source).url();
 const getProductsFromSanity = async () => {
   try {
     const query = `*[_type=="products"][0..19]{
