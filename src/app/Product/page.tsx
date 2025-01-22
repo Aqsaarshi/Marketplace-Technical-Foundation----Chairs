@@ -16,9 +16,6 @@ const builder = imageUrlBuilder(client);
 
 const urlFor = (source: any) => builder.image(source).url();
 
-
-
-
 const getProductsFromSanity = async () => {
   try {
     const query = `*[_type=="products"][0..19]{
@@ -101,14 +98,14 @@ const ProductList: React.FC = () => {
           alt="Logo"
           className="ml-[20px] sm:ml-0"
         />
-        <Link
+        <a
           href="/Cart"
           className="flex items-center w-[120px] h-[44px] px-[18px] py-[11px] gap-[12px] rounded-tl-[8px] bg-white relative z-10 mt-4 sm:mt-0 sm:w-auto sm:ml-0 sm:mr-0 ml-[10px] mr-[10px]"
         >
           <PiShoppingCartBold className="h-[40px] w-[40px]" />
           <p>Cart</p>
           <Image src={No} alt="No Items" height={30} width={30} />
-        </Link>
+        </a>
       </div>
       <div className="w-full  h-[74px] px-6 sm:px-[120px] py-[14px] flex justify-between items-center ">
         {/* Navigation Links */}
@@ -137,20 +134,17 @@ const ProductList: React.FC = () => {
           >
             Pages
           </Link>
-          <Link
+          <a
             href="/About"
             className="mr-5 hover:text-slate-400 font-Inter text-[#636270]"
           >
             About
-          </Link>
+          </a>
         </nav>
         {/* Contact Info */}
-        <Link
-          href="/Contact"
-          className="text-black ml-auto hover:text-slate-400"
-        >
+        <a href="/Contact" className="text-black ml-auto hover:text-slate-400">
           Contact: (808) 555-0111
-        </Link>
+        </a>
       </div>
       <div className="border-t border-gray-300  w-full"></div>
       <div className="container mx-auto p-6">
