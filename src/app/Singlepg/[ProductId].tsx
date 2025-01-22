@@ -12,8 +12,9 @@ import Footer from "../Footer/Footer";
 
 const builder = imageUrlBuilder(client);
 
-const urlFor = (source: Product["image"]["asset"]) =>
-  builder.image(source).url();
+const urlFor = (source: any) => builder.image(source).url();
+
+
 
 interface Product {
   type: string;
